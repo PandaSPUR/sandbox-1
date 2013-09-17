@@ -29,11 +29,9 @@ resource.setrlimit(resource.RLIMIT_STACK,(STACKMEMORYLIMIT,STACKMEMORYLIMIT))
 resource.setrlimit(resource.RLIMIT_DATA,(DATAMEMORYLIMIT,DATAMEMORYLIMIT))
 
 # Create array of whitelisted functions, all other functions will be prohibited
-whitelist = ['math','acos', 'asin', 'atan', 'atan2', 'ceil',
-             'cos', 'cosh', 'e', 'exp', 'fabs',
-             'floor', 'fmod', 'frexp', 'hypot', 'ldexp', 'log',
-             'log10', 'modf', 'pi', 'pow', 'radians', 'sin',
-             'sinh', 'sqrt', 'tan', 'tanh']
+whitelist = ['acos', 'asin', 'atan', 'atan2', 'ceil', 'cos', 'cosh', 'e', 'exp', 
+		'fabs', 'floor', 'fmod', 'frexp', 'hypot', 'ldexp', 'log', 'log10', 
+		'modf', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh']
 
 # Convert whitelist array into dictionary to feed into 'exec' argument
 whitelist = dict([(dict_element, locals().get(dict_element, None))
