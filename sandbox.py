@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 #/////////////////////////////////////////////////////////////////////////////////
 #
 #   Dominic Spinosa
@@ -38,21 +40,23 @@ whitelist = dict([(dict_element, locals().get(dict_element, None))
                    for dict_element in whitelist])
 
 # Execute provided code line by line using the 'exec' function.
-for line in sys.stdin:
-    try:
-        exec(line, {"__builtins__":None}, whitelist)
-    except NameError, e:
-        # An undefined or prohibited (non-whitelisted) function as been encountered
-        print "ERROR: ", e
-    except ImportError, e:
-        # User has attempted to import an unwanted/unknown module
-        print "ERROR: ", e
-    except ZeroDivisionError, e:
-        # User has attempted to divide by zero
-        print "ERROR: ", e
-    finally Exception, e:
-        # An error other than Name, Import or ZeroDivision has occurred
-        print "ERROR: ", e
+#for line in sys.stdin:
+with open(sys.argv[1]) as f:
+    for line in f:
+        try:
+            	exec(line, {"__builtins__":None}, whitelist)
+   	except NameError, e:
+        	# An undefined or prohibited (non-whitelisted) function as been encountered
+        	print "ERROR: ", e
+    	except ImportError, e:
+        	# User has attempted to import an unwanted/unknown module
+	        print "ERROR: ", e
+	except ZeroDivisionError, e:
+	        # User has attempted to divide by zero
+	        print "ERROR: ", e
+	except Exception, e:
+	        # An error other than Name, Import or ZeroDivision has occurred
+	        print "ERROR: ", e
 
 
 
