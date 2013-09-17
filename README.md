@@ -35,16 +35,11 @@ Environment:
 Required Files:
 	
 	"sandbox.py" Python script
-	"sandbox" makefile
 	user's Python script(s)
 
 Execution (from the command line):
 
-	sandbox <Python script>
-	
-	*Note - "sandbox" is a makefile that runs the following Python code:
-		
-		python sandbox.py
+	python sandbox.py <Python script>
 
 Examples:
 
