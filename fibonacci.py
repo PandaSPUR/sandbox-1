@@ -12,11 +12,10 @@
 #///////////////////////////////////////////////////////////////
 
 fib = [0, 1]
-fibnum, fib_temp
 
 print("The first 10 Fibonacci numbers are: ")
-print("0")
-print("1")
+print(fib[0])
+print(fib[1])
 
 for fibnum in range(3, 11):
 	fib_temp = fib[0] + fib[1]
